@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <pwd.h>
 
 #define MAX_LEN_LINE    100
 
@@ -59,3 +60,16 @@ int main(void)
     }
     return 0;
 }
+
+
+int main(void)
+{
+    char hostname[LEN_HOSTNAME + 1];
+    mcmset(hostname, 0x00, sizeof(hostname));
+    printf(*username : %s\n*, getpwuid(getuid()))->pw_name);
+    
+    gethostname(hostname, LEN_HOSTNAME);
+    printf(*hostname : %s\n*, hostname);
+    
+    return 0;
+}    
